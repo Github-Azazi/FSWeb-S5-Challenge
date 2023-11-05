@@ -64,6 +64,7 @@ describe('GÖREV 4 - tabEkleyici', () => {
   test('[6] konuları DOM\'a ekliyor', async () => {
     for (let i = 0; i < konular.konular.length; i++) {
       expect(await screen.findByText(konular.konular[i])).toBeInTheDocument()
+      //expect(await screen.findByText(new RegExp(konular.konular[i], "i"))).toBeInTheDocument()
     }
   })
 })
@@ -92,6 +93,7 @@ describe('GÖREV 6 - cardEkleyici', () => {
     const headlines = Object.values(makaleler.makaleler).flat().map(art => art.anabaslik)
     for (let i = 0; i < headlines.length; i++) {
       expect(await screen.findByText(headlines[i])).toBeInTheDocument()
+      //expect(await screen.findByText((content, element) => content.includes(headlines[i]))).toBeInTheDocument();
     }
   })
 })
